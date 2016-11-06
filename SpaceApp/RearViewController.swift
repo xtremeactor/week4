@@ -8,11 +8,15 @@
 
 import UIKit
 
+
+
 class RearViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var imageURL: URL!
-    
+    weak var rearDelegate:RearViewDelegate?
+
     @IBOutlet var tableView: UITableView!
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,11 +28,9 @@ class RearViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "rearCell", for: indexPath) as! RearTableCell
         
         let imageURLString = Array3[indexPath.row]
-        imageURL=URL(string:imageURLString)!
+        imageURL=URL(string:imageURLString)
         
-        
-        
-        cell.marsView.loadRequest(URLRequest(url: imageURL!))
+        cell.marsView.loadRequest(URLRequest(url: imageURL))
         
         
         
@@ -36,17 +38,17 @@ class RearViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidLoad()
-        tableView.reloadData()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidLoad()
+//     //   tableView.reloadData()
+//    }
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.reloadData()
-        
-        
+        super.viewDidLoad()        
+        //tableView.reloadData()        
+//        self.rearDelegate?.tellParentVC()
+        NotificationCenter.default.addObserver(self, selector: #selector(RearViewController.reloadDataFromVC), name: NSNotification.Name(rawValue: "ReloadDataFromVC"), object: nil)
         
         
         // Do any additional setup after loading the view.
@@ -57,6 +59,9 @@ class RearViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
+    func reloadDataFromVC(){
+        tableView.reloadData()
+    }
     
     
     

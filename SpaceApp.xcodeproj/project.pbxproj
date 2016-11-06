@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FD713391DCFA17F00837AF8 /* SAServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD713381DCFA17F00837AF8 /* SAServiceManager.swift */; };
+		0FD7133C1DCFA1F500837AF8 /* hw6 in Resources */ = {isa = PBXBuildFile; fileRef = 0FD7133B1DCFA1F500837AF8 /* hw6 */; };
 		33E37AE04E333E308FE53A78 /* Pods_SpaceAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE712D8B5E9EE311F03003E /* Pods_SpaceAppUITests.framework */; };
 		6303E4AC1B4A1DE00C6D2C9F /* Pods_SpaceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA85FEBE3B830BF2205A3F78 /* Pods_SpaceApp.framework */; };
 		7D5DF7991DCC24640034905B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DF7981DCC24640034905B /* AppDelegate.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FD713381DCFA17F00837AF8 /* SAServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAServiceManager.swift; sourceTree = "<group>"; };
+		0FD7133B1DCFA1F500837AF8 /* hw6 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hw6; sourceTree = "<group>"; };
 		1F33CD4E45C8F6960E831057 /* Pods-SpaceAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpaceAppUITests/Pods-SpaceAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BE712D8B5E9EE311F03003E /* Pods_SpaceAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5DF7951DCC24640034905B /* SpaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +60,7 @@
 		7D5DF7B41DCC24650034905B /* SpaceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5DF7B81DCC24650034905B /* SpaceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceAppUITests.swift; sourceTree = "<group>"; };
 		7D5DF7BA1DCC24650034905B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DAB890F1DCCCBD400670D76 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7DAB890F1DCCCBD400670D76 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		7DB08CB81DCE97F2000C4DF2 /* MastTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MastTableCell.swift; sourceTree = "<group>"; };
 		7DB08CBA1DCE980E000C4DF2 /* RearTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RearTableCell.swift; sourceTree = "<group>"; };
 		7DCC8A2A1DCC2A2100DD8CD9 /* FrontTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrontTableCell.swift; path = SpaceApp/FrontTableCell.swift; sourceTree = "<group>"; };
@@ -101,12 +105,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FD713371DCFA15900837AF8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0FD713381DCFA17F00837AF8 /* SAServiceManager.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		0FD7133A1DCFA1B600837AF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		7D5DF78C1DCC24640034905B = {
 			isa = PBXGroup;
 			children = (
-				7DCC8A391DCC459D00DD8CD9 /* View Controller */,
-				7DCC8A3A1DCC45B200DD8CD9 /* View */,
-				7DAB890F1DCCCBD400670D76 /* Main.storyboard */,
 				7D5DF7971DCC24640034905B /* SpaceApp */,
 				7D5DF7AC1DCC24650034905B /* SpaceAppTests */,
 				7D5DF7B71DCC24650034905B /* SpaceAppUITests */,
@@ -129,10 +145,16 @@
 		7D5DF7971DCC24640034905B /* SpaceApp */ = {
 			isa = PBXGroup;
 			children = (
+				0FD7133A1DCFA1B600837AF8 /* Model */,
+				0FD713371DCFA15900837AF8 /* Service */,
+				7DCC8A391DCC459D00DD8CD9 /* View Controller */,
+				7DCC8A3A1DCC45B200DD8CD9 /* View */,
+				7DAB890F1DCCCBD400670D76 /* Main.storyboard */,
 				7D5DF7981DCC24640034905B /* AppDelegate.swift */,
 				7D5DF79F1DCC24640034905B /* Assets.xcassets */,
 				7D5DF7A11DCC24640034905B /* LaunchScreen.storyboard */,
 				7D5DF7A41DCC24640034905B /* Info.plist */,
+				0FD7133B1DCFA1F500837AF8 /* hw6 */,
 			);
 			path = SpaceApp;
 			sourceTree = "<group>";
@@ -164,7 +186,6 @@
 				7DCC8A3F1DCC543B00DD8CD9 /* RearViewController.swift */,
 			);
 			name = "View Controller";
-			path = SpaceApp;
 			sourceTree = "<group>";
 		};
 		7DCC8A3A1DCC45B200DD8CD9 /* View */ = {
@@ -175,6 +196,7 @@
 				7DB08CBA1DCE980E000C4DF2 /* RearTableCell.swift */,
 			);
 			name = View;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		9532E11A60319C9E6C4716DD /* Frameworks */ = {
@@ -316,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD7133C1DCFA1F500837AF8 /* hw6 in Resources */,
 				7DAB89101DCCCBD400670D76 /* Main.storyboard in Resources */,
 				7D5DF7A31DCC24640034905B /* LaunchScreen.storyboard in Resources */,
 				7D5DF7A01DCC24640034905B /* Assets.xcassets in Resources */,
@@ -483,6 +506,7 @@
 			files = (
 				7DCC8A401DCC543B00DD8CD9 /* RearViewController.swift in Sources */,
 				7DB08CBB1DCE980E000C4DF2 /* RearTableCell.swift in Sources */,
+				0FD713391DCFA17F00837AF8 /* SAServiceManager.swift in Sources */,
 				7DCC8A3E1DCC52F600DD8CD9 /* ViewController.swift in Sources */,
 				7DCC8A2D1DCC2AB400DD8CD9 /* FrontViewController.swift in Sources */,
 				7DB08CB91DCE97F2000C4DF2 /* MastTableCell.swift in Sources */,

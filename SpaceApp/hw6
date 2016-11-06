@@ -1,0 +1,15 @@
+Homework 6: Refactoring project
+
+1. Create two new layers to the app:
+    1. Model layer: model class, properties within that model (cameraPosition: String, imageURL: String)
+        1. Normal way of creating model classes
+        2. Use ObjectMapper https://github.com/Hearst-DD/ObjectMapper
+    2. Service layer: Singleton object that can be called within your other classes, create a method to allow getting of responses by passing a url string
+        1. Alamofire
+
+2. Redo the structure of the storyboard. 1 VC -> Container View -> Table View
+    Implement tableview and add logic to handle which camera position is passed in.
+    1. In the table view, replace the web view with a UIImageView and load in the images accordingly using SDWebImage https://github.com/rs/SDWebImage
+    2. Scale the image accordingly to make it fit
+
+3. Ensure that the app works across different size devices

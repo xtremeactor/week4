@@ -18,7 +18,7 @@ class MastViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        
         let cell = tableView.dequeueReusableCell(withIdentifier: "mastCell", for: indexPath) as! MastTableCell
         
         let imageURLString = Array2[indexPath.row]

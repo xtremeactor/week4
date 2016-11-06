@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OEn-2Z-jYv">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OEn-2Z-jYv">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -24,7 +24,7 @@
                                 <state key="normal" title="FRONT"/>
                                 <connections>
                                     <action selector="loadFront:" destination="OEn-2Z-jYv" eventType="touchUpInside" id="2Z4-md-mnY"/>
-                                    <segue destination="JrR-kB-0Ix" kind="showDetail" id="omK-SO-FjF"/>
+                                    <segue destination="JrR-kB-0Ix" kind="showDetail" identifier="frontSegue" id="omK-SO-FjF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOy-kt-ksa">
@@ -42,15 +42,12 @@
                                 <state key="normal" title="REAR"/>
                                 <connections>
                                     <action selector="loadRear:" destination="OEn-2Z-jYv" eventType="touchUpInside" id="qa5-43-5EH"/>
-                                    <segue destination="ZqW-zI-bwF" kind="showDetail" id="6WC-2i-slH"/>
+                                    <segue destination="ZqW-zI-bwF" kind="showDetail" identifier="rearSegue" id="6WC-2i-slH"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="loadRear" destination="8gO-Sr-4vE" id="mkO-jr-h3s"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UN1-Ly-Pe4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,7 +74,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="162"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FrC-wt-X9d" id="bSQ-yh-jtN">
-                                            <frame key="frameInset" width="375" height="162"/>
+                                            <frame key="frameInset" width="375" height="161.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAE-41-AxA">
@@ -129,7 +126,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kxd-4g-tPf" id="LTE-W9-Wql">
-                                            <frame key="frameInset" width="375" height="159"/>
+                                            <frame key="frameInset" width="375" height="158.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="saw-4u-PXO">
@@ -160,6 +157,42 @@
             </objects>
             <point key="canvasLocation" x="528.79999999999995" y="656.22188905547227"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Dvq-DY-9ns">
+            <objects>
+                <viewController id="YH9-go-oOM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EfK-JO-xj9"/>
+                        <viewControllerLayoutGuide type="bottom" id="243-gg-E6S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4RQ-d7-Adc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V7z-DL-GLI">
+                                <frame key="frameInset" height="596"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="j53-P3-1B5" kind="embed" id="aH5-YP-YyI"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NBB-Nb-Ttp">
+                                <frame key="frameInset" minX="16" minY="28" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Front Camera"/>
+                                    <segment title="Mast Camera"/>
+                                    <segment title=""/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x1Y-ly-Xt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2001" y="-214"/>
+        </scene>
         <!--Rear View Controller-->
         <scene sceneID="ojy-Fs-POM">
             <objects>
@@ -181,7 +214,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="187"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sl3-ec-8z1" id="CFa-Nc-PBe">
-                                            <frame key="frameInset" width="375" height="187"/>
+                                            <frame key="frameInset" width="375" height="186.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-wA-RRE">
@@ -192,7 +225,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="what" destination="L6t-wA-RRE" id="7bB-Sf-oml"/>
+                                            <outlet property="marsView" destination="L6t-wA-RRE" id="IAK-ZH-VGm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -211,6 +244,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9on-Ap-dWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1341.5999999999999" y="654.42278860569718"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4J2-gt-mkD">
+            <objects>
+                <viewController id="j53-P3-1B5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QCq-8m-J8L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AzK-IR-iMV">
+                                <frame key="frameInset" width="375" height="596"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVK-OL-lXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2640.8000000000002" y="-245.57721139430288"/>
         </scene>
     </scenes>
 </document>
