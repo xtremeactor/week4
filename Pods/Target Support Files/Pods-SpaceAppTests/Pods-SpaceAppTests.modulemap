@@ -1,0 +1,6 @@
+framework module Pods_SpaceAppTests {
+  umbrella header "Pods-SpaceAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
